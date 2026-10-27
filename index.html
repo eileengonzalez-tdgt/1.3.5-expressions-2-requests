@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>10 Week English Program | Lesson 1.3.5: Requests</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff5ed',
+                            100: '#ffe1ca',
+                            200: '#ffc9a3',
+                            300: '#f6a56c',
+                            400: '#e98138',
+                            500: '#e98138',
+                            600: '#e9630f',
+                            700: '#e9630f',
+                            800: '#e9630f',
+                            900: '#2a2c2e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<!-- Custom Styles for Flipcards & Print formatting -->
+<style>
+        /* Helvetica is loaded from the user device or an appropriately licensed webfont. */
+        
+        body {
+            font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #2a2c2e;
+        }
+
+        /* Perspective for 3D flip card effect */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        /* Print Media Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            body {
+                background: white;
+                color: black;
+            }
+            .step-section {
+                display: block !important;
+                page-break-after: always;
+            }
+            .shadow-lg, .shadow-md, .shadow-sm {
+                box-shadow: none !important;
+                border: 1px solid #cbd5e1;
+            }
+        }
+
+        .step-section {
+            display: none;
+        }
+
+        .step-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        :root { --subject: #e9630f; --subject-light: #ffe1ca; --ink: #2a2c2e; }
+        /* Master header: deep purple with light-purple controls */
+        .master-header { background:#e9630f !important; color:#ffffff !important; }
+        .master-header h1 { color:#ffffff !important; }
+        .master-header .brand-badge { background:#ffe1ca !important; color:#e9630f !important; }
+        .master-header .header-meta { color:#fff5ed !important; }
+        .master-tabs { background:#ffe1ca !important; border-color:#f6a56c !important; }
+        .master-tabs .nav-tab:not(.bg-brand-600) { color:#2a2c2e !important; }
+        .master-tabs .nav-tab:not(.bg-brand-600):hover { background:#ffc9a3 !important; color:#2a2c2e !important; }
+        .master-tabs .nav-tab.bg-brand-600 { background:#e9630f !important; color:#fff !important; }
+        .master-header button.bg-brand-600 { background:#ffe1ca !important; color:#e9630f !important; }
+        .master-header button.bg-brand-600:hover { background:#ffc9a3 !important; }
+        .key-accuracy-rule { background:#fff5ed !important; border-left-color:#e98138 !important; color:#e9630f !important; }
+
+        html { font-size: 16px; }
+        body, button, input, textarea, select { font-family: 'Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        button { font-size: 15px; font-weight: 600; }
+        main h2 { font-size: 28px; line-height: 1.25; font-weight: 700; }
+        main h3 { font-size: 22px; line-height: 1.3; font-weight: 600; }
+        main p { line-height: 1.6; }
+        main .text-xs { font-size: 14px; }
+        main .text-sm { font-size: 16px; }
+        main .text-base { font-size: 16px; }
+        main .text-lg { font-size: 18px; }
+        main input, main textarea, main select { background: #fff; color: #2a2c2e; font-size: 16px; }
+        main input:focus, main textarea:focus, main select:focus { outline: 2px solid var(--subject); outline-offset: 2px; }
+        .nav-tab { font-size: 14px; }
+        .nav-tab:focus-visible, button:focus-visible { outline: 3px solid #f6a56c; outline-offset: 2px; }
+        .master-bottom-nav { display:flex; align-items:center; justify-content:space-between; gap:16px; max-width:1152px; margin:0 auto 20px; padding:12px 20px; }
+        .master-bottom-nav button { background:var(--subject); color:white; padding:11px 20px; border-radius:9px; }
+        .master-bottom-nav button:disabled { background:#d9d9d9; color:#54595f; cursor:not-allowed; }
+        #section-progress-label { color:#e2e2e2; font-size:12px; margin-left:12px; white-space:nowrap; }
+        @media (max-width: 768px) { main h2 {font-size:25px;} main h3 {font-size:20px;} .master-bottom-nav {padding:12px;} }
+        @media print { .master-bottom-nav {display:none!important;} .step-section {break-after:auto;page-break-after:auto;} }
+    
+/* Expressions-specific components: shared master typography and structure remain intact. */
+#activities {display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:14px;margin:18px 0}
+#activities .activity,.exercise,#scenarioContent {background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:16px;margin-bottom:12px}
+#activities .emoji {font-size:30px} .cardrow{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.choice,.scenario-tabs button,#checkAnswers,#resetAnswers {border:1px solid #f6a56c;border-radius:9px;padding:9px 12px;background:#fff5ed;color:#9a3412;cursor:pointer}
+.choice.selected,.scenario-tabs button.active,#checkAnswers{background:#e9630f;color:white}
+.dialogue{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:18px;margin:14px 0}
+.line{padding:9px 0;border-bottom:1px solid #e2e8f0;line-height:1.6}.line:last-child{border:0}.speaker{font-weight:700;color:#e9630f;margin-right:8px}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:20px 0}
+.flashcard{display:block;position:relative;width:100%;height:185px;perspective:1000px;border:0;background:transparent;cursor:pointer}
+.flash-inner{display:block;position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.flashcard.flipped .flash-inner{transform:rotateY(180deg)}
+.flash-face{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;border:1px solid #e2e8f0;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden;text-align:center;box-shadow:0 2px 8px #0000000a}
+.flash-front{background:#fff5ed;color:#9a3412}.flash-back{background:white;color:#2a2c2e;transform:rotateY(180deg)}
+.flash-label{font-size:12px;font-weight:700;letter-spacing:.08em}.flash-face strong{font-size:17px}.flash-face small{font-size:12px}
+.options label{display:block;margin:8px 0;padding:10px;border:1px solid #e2e8f0;border-radius:9px;cursor:pointer}
+.options input{margin-right:9px}.feedback{margin-top:8px;font-weight:600}.feedback.correct{color:#15803d}.feedback.incorrect{color:#b91c1c}
+.sectionhead{margin-bottom:12px}.sectionhead h2{color:#2a2c2e}.sub{color:#475569;margin-bottom:18px}
+.callout{background:#fff5ed;border-left:4px solid #e9630f;padding:16px;border-radius:8px;margin:18px 0}
+.questionlist{list-style:decimal;padding-left:26px;margin:12px 0}.questionlist li{margin:8px 0}
+.internalize-round{border:2px solid #e9630f !important;border-radius:18px !important;background:#fff5ed !important;padding:20px !important;box-shadow:0 3px 10px rgba(233,99,15,.07)}
+.internalize-round h3{color:#9a3412;margin-top:0}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+#notes{width:100%;min-height:120px;padding:12px;border:1px solid #cbd5e1;border-radius:12px}
+.scenario-tabs{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.checkline{display:block;margin:10px 0}
+.teacher{margin-top:18px}.teacher summary{cursor:pointer;font-weight:700}.teacher table{width:100%;border-collapse:collapse;margin-top:10px}.teacher td,.teacher th{border:1px solid #e2e8f0;padding:10px;text-align:left}
+.buttons{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.prompt{font-weight:700;margin-top:20px}
+main h3{margin-top:16px;margin-bottom:8px} main p{margin-bottom:12px}
+@media print{.flash-face{position:relative}.flash-back{transform:none}.flashcard{height:auto;min-height:160px}.flash-inner{height:auto;transform:none!important}.flash-front{display:none}.flash-back{position:relative}}
+
+/* Reliable expression cards: no 3D backface dependency. Orange Expressions palette. */
+.intro-reveal-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;min-height:176px;padding:20px 16px;border:1px solid #f6a56c;border-radius:14px;background:#fff5ed;color:#9a3412;cursor:pointer;text-align:center;box-shadow:0 2px 8px #0000000a;transition:background .2s,color .2s,transform .2s;}
+.intro-reveal-card strong{font-size:17px;line-height:1.45;}
+.intro-reveal-card small{font-size:13px;}
+.intro-reveal-card.revealed{background:#e9630f;color:white;border-color:#e9630f;}
+.intro-reveal-card:hover{transform:translateY(-2px);}
+.intro-reveal-card:focus-visible{outline:3px solid #e98138;outline-offset:3px;}
+
+/* Requests Day 3: role readability and editable partner feedback */
+.role-label{display:inline-block;white-space:nowrap;margin-right:8px;color:#9a3412;font-weight:700;}
+#partner-feedback{display:block;width:100%;min-height:132px;resize:vertical;background:#fff!important;color:#2a2c2e!important;border:1px solid #cbd5e1;border-radius:12px;padding:14px 16px;font-size:16px;line-height:1.6;opacity:1!important;-webkit-text-fill-color:#2a2c2e;}
+#partner-feedback:focus{outline:2px solid #e9630f;outline-offset:2px;border-color:#e9630f;}
+#partner-feedback::placeholder{color:#64748b;opacity:1;}
+.feedback-label{display:block;font-weight:600;margin:12px 0 8px;}
+
+/* Remember · color-coded word tiles and actions */
+#word-game #word-tiles{background:#fff5ed;border:2px dashed #e98138;}
+#word-game #word-tiles button{background:#ffe1ca;color:#70300b;border:2px solid #e98138;box-shadow:0 2px 0 #e9813833;transition:background .15s,transform .15s;}
+#word-game #word-tiles button:hover{background:#ffc9a3;transform:translateY(-2px);}
+#word-game #word-answer{background:#f0fdf4;border:2px dashed #16a34a;}
+#word-game #word-answer button{background:#dcfce7;color:#166534;border:2px solid #16a34a;}
+#word-game #word-answer button:hover{background:#bbf7d0;}
+#word-game .buttons button{border-radius:10px;padding:11px 18px;font-weight:700;border:2px solid transparent;transition:filter .15s,transform .15s;}
+#word-game .buttons button:hover:not(:disabled){filter:brightness(.94);transform:translateY(-1px);}
+#word-undo{background:#ffe1ca;color:#9a3412;border-color:#e98138!important;}
+#word-check{background:#e9630f;color:#fff;border-color:#c2410c!important;}
+#word-next{background:#166534;color:#fff;border-color:#14532d!important;}
+#word-reset{background:#f1f5f9;color:#334155;border-color:#94a3b8!important;}
+#word-game .buttons button:disabled{background:#e2e8f0!important;color:#64748b!important;border-color:#cbd5e1!important;cursor:not-allowed;transform:none;}
+#word-game button:focus-visible{outline:3px solid #1d4ed8;outline-offset:3px;}
+.internalize-round .role-lines { margin: 12px 0; }
+.internalize-round .role-lines p { margin: 0 0 8px; line-height: 1.55; }
+.internalize-round .role-lines p:last-child { margin-bottom: 0; }
+.internalize-round .role-label { white-space: nowrap; margin-right: 6px; }
+</style>
+<style>
+.tile-area{display:flex;flex-wrap:wrap;gap:9px;padding:14px;min-height:70px;border:2px dashed #f6a56c;border-radius:12px;margin:12px 0;background:#fffaf6}.tile-area button{background:#ffe1ca;color:#70300b;border:1px solid #e9630f;border-radius:9px;padding:10px 14px;font-weight:650}.tile-area button:hover{background:#ffc9a3}.tile-area button:focus-visible{outline:3px solid #248700;outline-offset:2px}.wheel-layout{display:grid;grid-template-columns:minmax(240px,1fr) minmax(240px,1fr);gap:24px;align-items:center}.wheel-wrap{position:relative;max-width:410px;width:100%;margin:auto;padding-top:20px}.wheel-pointer{position:absolute;z-index:2;top:-10px;left:50%;transform:translateX(-50%);font-size:38px;color:#2a2c2e}.wheel{width:100%;aspect-ratio:1;border-radius:50%;border:9px solid white;box-shadow:0 5px 22px #0002;position:relative;transition:transform 4s cubic-bezier(.15,.75,.12,1);background:conic-gradient(#e9630f 0 36deg,#ffd86c 36deg 72deg,#7bc9a1 72deg 108deg,#f6a56c 108deg 144deg,#a7c5ff 144deg 180deg,#e98138 180deg 216deg,#ed94ce 216deg 252deg,#ffe1ca 252deg 288deg,#a4b5f0 288deg 324deg,#ffb85e 324deg 360deg)}.wheel-center{position:absolute;inset:34%;border-radius:50%;background:#fffaf6;display:flex;align-items:center;justify-content:center;text-align:center;font-size:15px;font-weight:800;color:#70300b;line-height:1.3;border:4px solid white}.wheel-panel{min-height:260px}.wheel-panel #wheel-result{font-size:19px;font-weight:600;min-height:90px}.wheel-panel button{background:#e9630f;color:white;border-radius:9px;padding:12px 18px}#request-selfcheck{display:grid;gap:10px;margin:14px 0}#request-selfcheck label{display:flex;gap:10px;align-items:center}#request-selfcheck input{width:18px;height:18px;accent-color:#e9630f}@media(max-width:720px){.wheel-layout{grid-template-columns:1fr}.wheel-wrap{max-width:330px}}@media print{.wheel{transition:none}}
+</style><style>.request-flashcard{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:12px;min-height:170px;width:100%;padding:20px;border:2px solid #ffc9a3;border-radius:16px;background:#fff5ed;color:#2a2c2e;text-align:left;cursor:pointer;box-shadow:0 2px 5px #0000000b;transition:background .2s,border-color .2s}.request-flashcard:hover,.request-flashcard:focus-visible{border-color:#e9630f;outline-offset:2px}.request-flashcard[aria-pressed="true"]{background:#ffe1ca;border-color:#e9630f}.request-flashcard strong{font-size:18px;line-height:1.35}.request-flashcard span:not(.flash-hint){font-size:15px}.flash-hint{font-size:11px;font-weight:700;letter-spacing:.05em;color:#a64300}</style></head>
+<body class="min-h-screen flex flex-col">
+<!-- TOP HEADER & NAVIGATION -->
+<header class="master-header bg-[#e9630f] text-white sticky top-0 z-50 shadow-md no-print">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Branding -->
+<div class="flex items-center space-x-3">
+<div class="brand-badge bg-[#ffe1ca] text-[#e9630f] font-bold p-2 rounded-lg text-sm tracking-wide">
+                        10W
+                    </div>
+<div>
+<h1 class="font-bold text-lg leading-tight">Lesson 1.3.5: Requests</h1>
+<p class="header-meta text-xs font-medium text-[#fff0e5]">10 Week English Program · Day 3 · Expressions 2 · CEFR A2–B1 · 60 min</p>
+</div>
+</div>
+<!-- Print & Export Action -->
+<button class="flex items-center gap-2 bg-brand-600 hover:bg-brand-500 text-white text-xs sm:text-sm font-semibold py-2 px-3 sm:px-4 rounded-lg transition-colors" onclick="window.print()">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="hidden sm:inline">Print / Save PDF</span>
+</button>
+</div>
+</div>
+<!-- Progress Bar -->
+<div aria-label="Lesson section progress" aria-valuemax="6" aria-valuemin="0" aria-valuenow="1" class="w-full bg-[#f6a56c] h-1.5" id="progress-track" role="progressbar">
+<div class="bg-brand-500 h-full transition-all duration-300" id="progress-bar" style="width:16.6667%"></div>
+</div>
+<!-- Navigation Tabs -->
+<nav class="master-tabs bg-[#ffe1ca] border-t border-[#f6a56c] overflow-x-auto">
+<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 flex space-x-1 sm:space-x-2 py-2 text-xs sm:text-sm whitespace-nowrap"><button class="nav-tab px-3 py-1.5 rounded-md font-medium text-white bg-brand-600" id="tab-0" onclick="switchStep(0)">Overview</button>
+<button class="nav-tab px-3 py-1.5 rounded-md font-medium text-slate-300 hover:text-white hover:bg-slate-700" id="tab-1" onclick="switchStep(1)">1. Encounter (10m)</button>
+<button class="nav-tab px-3 py-1.5 rounded-md font-medium text-slate-300 hover:text-white hover:bg-slate-700" id="tab-2" onclick="switchStep(2)">2. Clarify (15m)</button>
+<button class="nav-tab px-3 py-1.5 rounded-md font-medium text-slate-300 hover:text-white hover:bg-slate-700" id="tab-3" onclick="switchStep(3)">3. Remember (10m)</button>
+<button class="nav-tab px-3 py-1.5 rounded-md font-medium text-slate-300 hover:text-white hover:bg-slate-700" id="tab-4" onclick="switchStep(4)">4. Internalize (15m)</button>
+<button class="nav-tab px-3 py-1.5 rounded-md font-medium text-slate-300 hover:text-white hover:bg-slate-700" id="tab-5" onclick="switchStep(5)">5. Fluent Use (10m)</button></div>
+</nav>
+</header>
+<!-- MAIN CONTAINER -->
+<main class="flex-1 max-w-6xl w-full mx-auto p-4 sm:p-6 lg:p-8"><section class="step-section active" id="step-0"><div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 mb-6"><div class="flex flex-wrap justify-between items-start gap-4 mb-5"><div><span class="inline-block bg-brand-100 text-brand-800 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wide">LESSON 1.3.5 OVERVIEW</span><h2 class="mt-3">Requests</h2></div><div class="text-slate-600 font-semibold">Total Duration: 60 min</div></div><p class="text-slate-700 mb-7">Make clear, polite requests in everyday situations and customer interactions. Practice natural request expressions, word order, and confident spoken responses.</p><div class="grid md:grid-cols-3 gap-4 mb-8"><div class="p-4 bg-slate-50 rounded-xl border border-slate-200"><h3 class="text-brand-700">Recognize</h3><p>Notice how tone and context change a request.</p></div><div class="p-4 bg-slate-50 rounded-xl border border-slate-200"><h3 class="text-brand-700">Build</h3><p>Organize words to form clear, polite requests.</p></div><div class="p-4 bg-slate-50 rounded-xl border border-slate-200"><h3 class="text-brand-700">Communicate</h3><p>Make and respond to requests in realistic conversations.</p></div></div><h3 class="mb-4">Lesson Roadmap</h3><div class="overflow-x-auto mb-8"><table class="w-full text-left border border-slate-200 rounded-xl overflow-hidden"><thead class="bg-slate-100"><tr><th class="p-3">Stage</th><th class="p-3">Focus Area</th><th class="p-3">Time</th><th class="p-3">Activity Output</th></tr></thead><tbody class="divide-y divide-slate-200"><tr><td class="p-3">Encounter</td><td class="p-3">Notice requests</td><td class="p-3">10 min</td><td class="p-3">Compare two real-life situations</td></tr><tr><td class="p-3">Clarify</td><td class="p-3">Polite language</td><td class="p-3">15 min</td><td class="p-3">Practice 12 expressions in three categories</td></tr><tr><td class="p-3">Remember</td><td class="p-3">Word order challenge</td><td class="p-3">10 min</td><td class="p-3">Build ten polite requests</td></tr><tr><td class="p-3">Internalize</td><td class="p-3">Partner role-play</td><td class="p-3">15 min</td><td class="p-3">Three contextual conversations</td></tr><tr><td class="p-3">Fluent Use</td><td class="p-3">Spin the wheel</td><td class="p-3">10 min</td><td class="p-3">Spontaneous request-and-response conversations</td></tr></tbody></table></div><button class="bg-brand-600 text-white py-3 px-6 rounded-lg hover:bg-brand-700" onclick="switchStep(1)">Start Lesson →</button></div></section><section class="step-section" id="step-1"><div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200"><h2>01 · Encounter: How Would You Ask?</h2><p class="sub">Look at each situation. Describe what is happening and suggest what the person could say. Then compare a direct request with a more polite version.</p><div class="two"><div class="activity internalize-round"><h3>🕒 Everyday life · Asking for the time</h3><p>Your phone battery is dead and you need to catch a bus. Someone is standing nearby.</p><p><strong>Discuss:</strong> What would you say? How could you make your question sound friendly?</p></div><div class="activity internalize-round"><h3>🎧 Customer support · Requesting information</h3><p>A customer calls because an order has not arrived. The agent needs the order number before checking.</p><p><strong>Discuss:</strong> How should the agent ask for the information politely?</p></div></div><h3>Talk with a partner</h3><ol class="questionlist"><li>What makes the two requests polite?</li><li>Does adding <em>please</em> always make a sentence natural?</li><li>How does the audience change the language you choose?</li></ol><div class="callout"><strong>Notice:</strong> Polite requests are clear, considerate, and appropriate to the situation.</div></div></section>
+<section class="step-section" id="step-2"><div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200"><h2>02 · Clarify: Requests That Sound Natural</h2><p class="sub">Explore 12 practical expressions. Select a card to reveal its example and context. Practice the pronunciation and use each phrase in a new situation.</p><div class="callout"><strong>Remember:</strong> This is an introduction to request expressions. You will study modal grammar in more detail on Day 4.</div><div id="request-bank"></div><h3 class="mt-6">Three useful patterns</h3><div class="two"><div class="activity internalize-round"><strong>Could / Can + subject + base verb?</strong><p>“Could you help me with this?”</p></div><div class="activity internalize-round"><strong>Would you mind + verb-ing?</strong><p>“Would you mind waiting a moment?”</p></div><div class="activity internalize-round"><strong>Could you tell me + indirect question?</strong><p>“Could you tell me where the bank is?”</p><p class="text-sm">Not: “where is the bank” after <em>tell me</em>.</p></div><div class="activity internalize-round"><strong>Would it be possible to + base verb?</strong><p>“Would it be possible to reschedule?”</p></div></div><h3 class="mt-6">Respond to the request</h3><div class="two"><div class="activity"><strong>Accept</strong><p>“Of course!” · “Sure, no problem.”</p></div><div class="activity"><strong>Decline politely</strong><p>“I'm sorry, but I can't right now.”</p></div></div><div class="callout"><strong>Useful lesson vocabulary:</strong> bring a dish → “Could you bring a dish?” · sign up on → “Could you sign up on the website?” · let us know → “Could you let us know by Friday?”</div><p class="mt-4"><strong>Speaking check:</strong> Change “Give me your email address” into a polite professional request, then respond naturally.</p></div></section>
+<section class="step-section" id="step-3"><div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200"><h2>03 · Remember: Word Order Challenge</h2><p class="sub">Select the scrambled word tiles in the correct order. Build ten polite requests, check each answer, and practice saying it aloud with a partner.</p><div class="activity" id="word-game"><div class="flex justify-between items-center gap-3 flex-wrap"><strong id="word-counter">Sentence 1 of 10</strong><span class="text-sm" id="word-score">0 correct</span></div><p class="mt-3" id="word-context"></p><div aria-live="polite" class="tile-area" id="word-answer"></div><div class="tile-area" id="word-tiles"></div><div class="buttons"><button id="word-undo" type="button">Undo</button><button id="word-check" type="button">Check answer</button><button disabled="" id="word-next" type="button">Next →</button><button id="word-reset" type="button">Restart</button></div><p aria-live="polite" id="word-feedback" role="status"></p></div><div class="callout"><strong>Partner extension:</strong> After each sentence, say the request naturally and have your partner respond.</div></div></section>
+<section class="step-section" id="step-4"><div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200"><h2>04 · Internalize: Practice in Context</h2><p class="sub">Work with a partner. Switch roles after each conversation. Make at least two requests and respond appropriately.</p><div class="two"><div class="activity internalize-round"><h3>🍽️ At a restaurant</h3><div class="role-lines"><p><strong class="role-label">Role A:</strong> Customer who needs a menu recommendation and the bill.</p><p><strong class="role-label">Role B:</strong> Server.</p></div><details><summary>Reveal guiding phrases</summary><p>“Could you recommend something?” · “Could we have the bill, please?”</p></details></div><div class="activity internalize-round"><h3>🗺️ Asking for directions</h3><div class="role-lines"><p><strong class="role-label">Role A:</strong> Visitor looking for the train station.</p><p><strong class="role-label">Role B:</strong> Local resident.</p></div><details><summary>Reveal guiding phrases</summary><p>“Do you know where the station is?” · “Could you give me directions?”</p></details></div><div class="activity internalize-round"><h3>📚 Borrowing an item</h3><div class="role-lines"><p><strong class="role-label">Role A:</strong> Student who forgot a pen.</p><p><strong class="role-label">Role B:</strong> Classmate.</p></div><details><summary>Reveal guiding phrases</summary><p>“Could I borrow your pen?” · “Would you mind lending me one?”</p></details></div><div class="activity internalize-round"><h3>🎧 Workplace extension</h3><div class="role-lines"><p><strong class="role-label">Role A:</strong> Support agent asking for a screenshot.</p><p><strong class="role-label">Role B:</strong> Customer.</p></div><details><summary>Reveal guiding phrases</summary><p>“Could you send us a screenshot, please?” · “Would you mind describing the error?”</p></details></div></div><h3>Partner feedback</h3><p>Was the request clear? Was the tone appropriate? Did the other person respond naturally?</p><label for="partner-feedback" class="feedback-label">Write your feedback</label><textarea id="partner-feedback" rows="4" placeholder="One phrase my partner used well… One phrase to improve…"></textarea></div></section>
+<section class="step-section" id="step-5"><div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200"><h2>05 · Fluent Use: Spin the Wheel</h2><p class="sub">Spin for a surprise situation. With a partner, act out a 30–45 second conversation: open politely, make a request, respond naturally, and ask a follow-up. Change roles and spin again. All ten situations will appear before any repeat.</p><div class="wheel-layout"><div class="wheel-wrap"><div aria-hidden="true" class="wheel-pointer">▼</div><div aria-label="Colorful wheel of ten request situations" class="wheel" id="request-wheel" role="img"><div class="wheel-center">POLITE<br/>REQUESTS</div></div></div><div class="activity wheel-panel"><h3>🎡 Your scenario</h3><p aria-live="polite" id="wheel-result">Press Spin the wheel to select a situation.</p><button id="spin-wheel" type="button">Spin the wheel</button><p class="text-sm">Each spin gives you a new situation to practice with your partner.</p><div class="mt-3"><strong>Challenge checklist</strong><p>✓ Polite opening · ✓ Clear request · ✓ Natural response · ✓ Follow-up</p></div></div></div><h3>Quick self-assessment</h3><div id="request-selfcheck"><label><input type="checkbox"/> I chose a suitable request expression.</label><label><input type="checkbox"/> I used correct word order.</label><label><input type="checkbox"/> I responded politely.</label><label><input type="checkbox"/> I spoke without reading a script.</label></div><p aria-live="polite" id="request-progress">0 of 4 skills checked</p></div></section></main>
+<!-- Master bottom navigation: available on every lesson screen -->
+<div aria-label="Lesson navigation" class="master-bottom-nav no-print">
+<button disabled="" id="previous-section" onclick="switchStep(currentStep-1)" type="button">← Back</button>
+<span id="bottom-section-label" style="color:#54595f;font-size:14px;font-weight:500">Overview · 1 of 6</span>
+<button id="next-section" onclick="switchStep(currentStep+1)" type="button">Next →</button>
+</div>
+<!-- FOOTER -->
+<footer class="bg-[#2a2c2e] border-t border-[#54595f] text-slate-400 text-xs py-6 text-center no-print mt-auto">
+<div class="max-w-7xl mx-auto px-4">
+<p>10 Week English Program | Lesson 1.1.5: Introducing Oneself (CEFR A2-B1 Bridge)</p>
+<p class="text-slate-500 text-[10px] mt-1">Designed for interactive oral fluency and instructional efficiency.</p>
+</div>
+</footer>
+<script>
+        let currentStep = 0;
+        function switchStep(stepIndex) {
+            if (stepIndex < 0 || stepIndex > 5) return;
+            currentStep = stepIndex;
+            const steps = document.querySelectorAll('.step-section');
+            const tabs = document.querySelectorAll('.nav-tab');
+
+            steps.forEach((step, idx) => {
+                if (idx === stepIndex) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            tabs.forEach((tab, idx) => {
+                if (idx === stepIndex) {
+                    tab.classList.remove('text-slate-300', 'hover:bg-slate-700');
+                    tab.classList.add('text-white', 'bg-brand-600');
+                    tab.setAttribute('aria-current', 'step');
+                } else {
+                    tab.classList.remove('text-white', 'bg-brand-600');
+                    tab.classList.add('text-slate-300', 'hover:bg-slate-700');
+                    tab.removeAttribute('aria-current');
+                }
+            });
+
+            // Update Progress Bar
+            const progress = ((stepIndex + 1) / steps.length) * 100;
+            document.getElementById('progress-bar').style.width = `${progress}%`;
+            document.getElementById('progress-track').setAttribute('aria-valuenow', String(stepIndex+1));
+            document.getElementById('previous-section').disabled = stepIndex === 0;
+            document.getElementById('next-section').disabled = stepIndex === steps.length-1;
+            document.getElementById('next-section').textContent = stepIndex === steps.length-1 ? 'Completed ✓' : 'Next →';
+            const sectionName = tabs[stepIndex].textContent.trim();
+            document.getElementById('bottom-section-label').textContent = `${sectionName} · ${stepIndex+1} of ${steps.length}`;
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+
+
+switchStep(0);
+</script>
+<script>
+(()=>{
+const expressionGroups=[
+{title:'Everyday Requests',items:[
+['Can you…?','Can you help me with this?','Friendly, common request'],
+['Could you…?','Could you open the window?','Polite request'],
+['Could I…?','Could I borrow your pen?','Asking permission'],
+['Do you mind if I…?','Do you mind if I sit here?','Asking permission considerately']]},
+{title:'Polite & Professional Requests',items:[
+['Could you please…?','Could you please confirm your email address?','Professional and courteous'],
+['Would you mind + -ing…?','Would you mind waiting a moment?','Extra considerate; use -ing'],
+['Would it be possible to…?','Would it be possible to reschedule?','Polite and indirect'],
+['May I…?','May I place you on a brief hold?','Professional permission']]},
+{title:'Information & Clarification',items:[
+['Do you know…?','Do you know where the nearest ATM is?','Asking for information'],
+['Could you tell me…?','Could you tell me what time it starts?','Polite information question'],
+['Could you clarify…?','Could you clarify what you mean?','Requesting clarification'],
+['Could you repeat that, please?','Could you repeat the last part, please?','Asking for repetition']]}];
+const bankEl=document.getElementById('request-bank');
+expressionGroups.forEach(group=>{
+const heading=document.createElement('h3');heading.className='mt-6 mb-3';heading.textContent=group.title;bankEl.append(heading);
+const grid=document.createElement('div');grid.className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4';bankEl.append(grid);
+group.items.forEach(([expression,example,usage])=>{
+const card=document.createElement('button');card.type='button';card.className='request-flashcard';card.setAttribute('aria-pressed','false');
+let revealed=false;
+function paint(){card.replaceChildren();const tag=document.createElement('span');tag.className='flash-hint';tag.textContent=revealed?'EXAMPLE & CONTEXT · CLICK TO FLIP BACK':'EXPRESSION · CLICK TO REVEAL';const main=document.createElement('strong');main.textContent=revealed?example:expression;card.append(tag,main);if(revealed){const note=document.createElement('span');note.textContent=usage;card.append(note);}card.setAttribute('aria-pressed',String(revealed));}
+card.addEventListener('click',()=>{revealed=!revealed;paint();});paint();grid.append(card);
+});
+});
+const exercises=[
+{context:'Ask a stranger for the time.',words:['Could','you','please','tell','me','the','time','?']},
+{context:'Ask a classmate to lend you a pen.',words:['Could','I','borrow','your','pen','?']},
+{context:'Ask a colleague to wait a moment.',words:['Would','you','mind','waiting','a','moment','?']},
+{context:'Ask a customer to confirm an email address.',words:['Could','you','please','confirm','your','email','address','?']},
+{context:'Ask where the nearest ATM is.',words:['Do','you','know','where','the','nearest','ATM','is','?']},
+{context:'Ask someone to repeat a sentence.',words:['Could','you','repeat','that',',','please','?']},
+{context:'Ask permission to place a customer on hold.',words:['May','I','place','you','on','a','brief','hold','?']},
+{context:'Ask if rescheduling is possible.',words:['Would','it','be','possible','to','reschedule','?']},
+{context:'Ask permission to sit next to someone.',words:['Do','you','mind','if','I','sit','here','?']},
+{context:'Ask a colleague to clarify the instructions.',words:['Could','you','clarify','the','instructions',',','please','?']}
+];
+let index=0,chosen=[],correct=0,solved=false;
+const $=id=>document.getElementById(id);
+function shuffled(n){const arr=[...Array(n).keys()];for(let i=arr.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+let order=[];
+function render(){const e=exercises[index];$('word-counter').textContent=`Sentence ${index+1} of ${exercises.length}`;$('word-score').textContent=`${correct} correct`;$('word-context').textContent=e.context;$('word-answer').replaceChildren();$('word-tiles').replaceChildren();chosen.forEach((pos,i)=>{let b=document.createElement('button');b.type='button';b.textContent=e.words[pos];b.title='Remove this word';b.onclick=()=>{if(solved)return;chosen.splice(i,1);render();};$('word-answer').append(b);});order.filter(i=>!chosen.includes(i)).forEach(pos=>{let b=document.createElement('button');b.type='button';b.textContent=e.words[pos];b.onclick=()=>{if(solved)return;chosen.push(pos);render();};$('word-tiles').append(b);});$('word-next').disabled=!solved;}
+function load(){chosen=[];solved=false;order=shuffled(exercises[index].words.length);$('word-feedback').textContent='';render();}
+$('word-undo').onclick=()=>{if(!solved){chosen.pop();render();}};
+$('word-check').onclick=()=>{if(solved)return;let e=exercises[index];if(chosen.length!==e.words.length){$('word-feedback').textContent='Select all the word tiles before checking.';return;}if(chosen.every((pos,i)=>pos===i)){$('word-feedback').textContent='✓ Correct! Read the sentence aloud.';solved=true;correct++;render();}else{$('word-feedback').textContent='Not quite. Review the word order, remove tiles, and try again.';}};
+$('word-next').onclick=()=>{if(index<exercises.length-1){index++;load();}else{$('word-feedback').textContent=`Challenge complete! ${correct} of ${exercises.length} correct. Press Restart to practice again.`;$('word-next').disabled=true;}};
+$('word-reset').onclick=()=>{index=0;correct=0;load();};load();
+const scenarios=[
+'Ask a friend for a favor.',
+'Ask a waiter for help.',
+'Ask a stranger for directions.',
+'Ask a colleague to swap shifts.',
+'Ask a customer to confirm information.',
+'Ask your supervisor for clarification.',
+'Ask someone to repeat themselves.',
+'Ask to borrow an item.',
+'Ask a customer to wait briefly.',
+'Ask to reschedule an appointment.'
+];
+let rotation=0,remaining=[];
+$('spin-wheel').onclick=()=>{
+const button=$('spin-wheel');if(button.disabled)return;
+if(!remaining.length)remaining=shuffled(scenarios.length);
+const selected=remaining.pop();button.disabled=true;
+const target=360-(selected*36+18),current=((rotation%360)+360)%360;
+rotation+=1440+((target-current+360)%360);
+$('request-wheel').style.transform=`rotate(${rotation}deg)`;
+$('wheel-result').textContent='Spinning…';
+setTimeout(()=>{$('wheel-result').textContent=scenarios[selected];button.disabled=false;},4100);
+};
+$('request-selfcheck').addEventListener('change',()=>{$('request-progress').textContent=`${$('request-selfcheck').querySelectorAll('input:checked').length} of 4 skills checked`;});
+})();
+</script></body>
+</html>
